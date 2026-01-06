@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useGlobalReducer from '../hooks/useGlobalReducer';
 import { ContactCard } from '../components/ContactCard';
@@ -8,7 +8,7 @@ const API_URL = 'https://playground.4geeks.com/contact/agendas/sorin';
 export function Contact() {
   const navigate = useNavigate();
   const { dispatch, store } = useGlobalReducer();
-  const hasLoaded = React.useRef(false);
+  const hasLoaded = useRef(false);
 
   useEffect(() => {
     if (!hasLoaded.current) {
